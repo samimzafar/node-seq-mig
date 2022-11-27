@@ -101,10 +101,10 @@ dist
 # DynamoDB Local files
 .dynamodb/
 
-# TernJS port file
-.tern-port
-config/environments/development.json
-config/environments/test.json
+# # TernJS port file
+# .tern-port
+# config/environments/development.json
+# config/environments/test.json
 
 .idea/
 client/.DS_Store
