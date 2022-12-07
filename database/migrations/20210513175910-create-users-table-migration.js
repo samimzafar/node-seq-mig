@@ -15,23 +15,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      verified: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false,
-        defaultValue:false
-      },
-      email: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      gender: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      role: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.INTEGER,
