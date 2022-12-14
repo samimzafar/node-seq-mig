@@ -63,3 +63,43 @@ exports.login = async (req, res) => {
       .send(err.message || "Something went wrong...");
   }
 };
+
+exports.get = async (req, res) => {
+  try {
+    const users = await Users.findAll({ where: { role: "user" } });
+    if (!users) {
+      return res.status(400).send({
+        message: "User doesn't exist",
+      });
+    } else {
+      return res.status(200).send({ message: "Users Fetched", users });
+    }
+  } catch (err) {
+    return res
+      .status(err.status || 500)
+      .send(err.message || "Something went wrong...");
+  }
+};
+
+exports.update = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const updatedUser = await Users.update(req.body, {
+      where: { id },
+      individualHooks: true,
+    });
+    if (updatedUser) {
+      return res
+        .status(200)
+        .send({ message: "User was updated successfully." });
+    } else {
+      return res.status(404).send({
+        message: `User with id=${id} not found.`,
+      });
+    }
+  } catch (err) {
+    return res
+      .status(err.status || 500)
+      .send(err.message || "Something went wrong...");
+  }
+};
