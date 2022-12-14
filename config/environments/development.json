@@ -3,7 +3,7 @@
   "db": {
     "username": "root",
     "password": null,
-    "name": "node-boiler-plate",
+    "name": "cafe-app",
     "host": "127.0.0.1"
   }
 }
